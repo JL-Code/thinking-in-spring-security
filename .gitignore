@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+.xcodemap/log
+.xcodemap/cache
+.xcodemap/data

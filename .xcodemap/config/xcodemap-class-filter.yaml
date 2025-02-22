@@ -1,0 +1,21 @@
+autoDetectedPackages:
+- com.jiangy.thinkinginspringsecurity
+enableAutoDetect: true
+funcDisplayConfig:
+  skipConstructors: false
+  skipFieldAccess: true
+  skipFieldChange: true
+  skipGetters: true
+  skipNonProjectPackages: true
+  skipPrivateMethods: false
+  skipSetters: true
+ignoreSameClassCall: null
+ignoreSamePackageCall: null
+includedPackagePrefixes:
+- org.springframework.security
+includedParentClasses: null
+name: xcodemap-filter
+recordMode: all
+sourceDisplayConfig:
+  color: blue
+startOnDebug: false
