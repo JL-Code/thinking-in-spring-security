@@ -17,4 +17,4 @@ spring:
 # 配置 JSP 的视图解析器
 logging:
   level:
-    org.springframework.security: debug
+    org.springframework.security: trace
