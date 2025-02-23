@@ -8,7 +8,9 @@ import org.springframework.security.web.SecurityFilterChain;
 
 /**
  * 应用安全配置
- * <p>创建时间: 2025/2/22 </p>
+ * <p>
+ * 创建时间: 2025/2/22
+ * </p>
  *
  * @author <a href="mailto:jiangliu0316@outlook.com" rel="nofollow">蒋勇</a>
  */
@@ -19,11 +21,14 @@ public class AppSecurityConfig {
 
         http
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(authorize ->
-                        authorize.requestMatchers("/api/**", "/swagger-ui/**", "/v3/api-docs/**", "swagger-ui.html")
-                                .permitAll()
-                                .anyRequest()
-                                .authenticated());
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/api/**",
+                                "/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "swagger-ui.html")
+                        .permitAll()
+                        .anyRequest()
+                        .permitAll());
         return http.build();
     }
 }
