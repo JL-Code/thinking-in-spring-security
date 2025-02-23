@@ -38,3 +38,4 @@ out/
 .xcodemap/log
 .xcodemap/cache
 .xcodemap/data
+application-local.yml

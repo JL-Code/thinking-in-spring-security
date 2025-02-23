@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.config.annotation.web.configurers.RememberMeConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,6 +22,7 @@ import org.springframework.security.web.SecurityFilterChain;
  * </p>
  * SecurityFilterChain 默认配置：{@link org.springframework.boot.autoconfigure.security.servlet.SpringBootWebSecurityConfiguration}
  * formLogin 默认配置：{@link FormLoginConfigurer}
+ * logout 默认配置：{@link LogoutConfigurer}
  * rememberMe 默认配置：{@link RememberMeConfigurer}
  *
  * @author <a href="mailto:jiangliu0316@outlook.com" rel="nofollow">蒋勇</a>
@@ -32,13 +34,12 @@ public class MockDefaultMVCAppSecurityConfig {
     public SecurityFilterChain appSecurityFilterChain(HttpSecurity http) throws Exception {
         http
                 .authorizeHttpRequests(authorize ->
-                        authorize.anyRequest().authenticated())
-//                .formLogin(form ->
-//                        form.loginPage("/login")
-//                                .permitAll()
-//                )
+                        authorize.anyRequest().authenticated()
+                )
                 .rememberMe(Customizer.withDefaults())
                 .formLogin(Customizer.withDefaults())
+                // One-Time Token Login
+                .oneTimeTokenLogin(Customizer.withDefaults())
                 .httpBasic(Customizer.withDefaults());
         return http.build();
     }

@@ -19,7 +19,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/users")
 @RequiredArgsConstructor
-public class UserController {
+public class UserApiController {
     private final UserRepository userRepository;
 
     @GetMapping

@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spring Security</title>
-    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css"/>
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body>
-<div th:replace="fragments/navbar::navbar"></div>
-<h1 class="text-3xl font-bold">
-    Hello world! <span th:text="${#strings.toString(currentUser.username)}"></span>
-</h1>
-</body>
-</html>
+<div xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+     layout:decorate="~{layouts/default}">
+    <div layout:fragment="content" id="index">
+        <div th:replace="fragments/navbar::navbar"></div>
+        <h1 class="text-3xl font-bold">
+            Hello world! <span th:text="${#strings.toString(currentUser.username)}"></span>
+        </h1>
+    </div>
+</div>
